@@ -1,10 +1,9 @@
-import logo from './logo.svg';
+import Main from "./components/Main";
+import {makeStyles} from "@material-ui/core/styles";
 
-function App() {
+const App = (props) => {
   return (
-    <div className="App">
-      React App
-    </div>
+   	<Main/>
   );
 }
 

@@ -1,0 +1,24 @@
+{
+  "rate": [
+    {"base": {
+      "cover": {
+        "nappy": {
+          "rate": 1169
+        },
+        "blanket": {
+          "rate": 1625
+        }
+      },
+      "accessory": 1169,
+      "ears": 1169
+    }},
+    {"toy": 1340},
+    {"postcard": 125},
+    {"extra": 615},
+    {"bonus": {
+      "one": 1,
+      "two": 2,
+      "three": 2
+    }}
+  ]
+}
