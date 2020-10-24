@@ -5,5 +5,5 @@ import data from "./data.json";
 import rate from "./rate.json";
 
 ReactDOM.render((
-	<App initialState={data.data} initialRate={rate.rate}/>
+	<App data={data.data} rate={rate.rate}/>
 ), document.getElementById('root'));

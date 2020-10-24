@@ -42,8 +42,8 @@ const useStyles = makeStyles({
 
 const Main = (props) => {
 
-	const initialData = props.initialState;
-	const initialConfig = props.initialConfig;
+	const initialData = props.data;
+	const initialRate = props.rate;
 
 	const [state,setState] = useState(initialData);
 	const [condition,setCondition] = useState("base");
@@ -60,6 +60,8 @@ const Main = (props) => {
 				setCondition('base')
 		}
 	}
+
+	const handleChange = () => {}
 
 
 	const muller = {
@@ -105,7 +107,9 @@ const Main = (props) => {
 				<Head progress={progress}/>
 			</Container>
 			<Container maxWidth="sm">
-				<MainBlock condition={condition}/>
+				<MainBlock data={state}
+						   condition={condition}
+						   handleChange={handleChange}/>
 			</Container>
 		</ThemeProvider>
 	);

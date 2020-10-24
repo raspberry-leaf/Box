@@ -2,18 +2,9 @@ import React, {useState} from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import main from "../img/img_main.png";
 import Typography from "@material-ui/core/Typography";
+import Item from "./Item";
 
 const useStyles = makeStyles({
-	head: {
-		display: "block",
-		width: "100%",
-		height: "50px",
-		textAlign: "center"
-	},
-	img: {
-		width: "auto",
-		height: "100%",
-	},
 
 	subtitle: {
 		fontWeight: "400",
@@ -32,10 +23,13 @@ const MainBlock = (props) => {
 		<div>
 			<Typography component="h2" className={classes.subtitle}>
 				{props.condition === "base"
-					? "Выберите базу:"
+					? "Выберите базовый комплект:"
 					: ''
 				}
 			</Typography>
+			<Item data={props.data}
+				  condition={props.condition}
+				  handleChange={props.handleChange}/>
 
 		</div>
 

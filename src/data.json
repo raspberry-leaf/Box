@@ -1,64 +1,73 @@
 {
   "data": [
-    { "base": {
-      "mint": {
-        "quantity": 1,
-        "code": "Mint",
-        "cover": {
-          "itemOne": {
+    {
+      "name": "result",
+      "base": "",
+      "toy": ""
+    },
+    { "name": "base",
+      "desc": "В базу входят: <br>- пелёнка (90*120 см) / одеяло (90*120 см), <br>- нагрудник (> 6 мес) / шапочка (0-3 мес), <br>- грызунок из бука с шуршащими ушками",
+      "items": [
+        {
+          "color": "mint",
+          "quantity": 1,
+          "type": "nappy",
+          "img": "img_mint-n.jpg",
+          "code": "MintN"
+        },
+        {
+          "color": "beige",
+          "quantity": 1,
+          "type": "blanket",
+          "img": "img_mint-n.jpg",
+          "code": "BeigeB"
+        },
+        {
+          "color": "roses",
+          "quantity": 1,
+          "type": "nappy",
+          "img": "img_mint-n.jpg",
+          "code": "RosesN"
+        }
+      ]
+    },
+    {
+      "name": "toy",
+      "desc": "Состав базового комплекта: <br>- пелёнка (90*120 см) / одеяло (90*120 см), <br>- нагрудник (> 6 мес) / шапочка (0-3 мес), <br>- грызунок из бука с шуршащими ушками",
+      "items": [
+        {"beige": {
+          "quantity": 1,
+          "code": "Beige",
+          "cover": {
+            "type": "blanket",
+            "img": "url",
+            "code": "B"
+          },
+          "accessory": {
+            "type": "bib",
+            "img": "url"
+          },
+          "ears": {
+            "img": "url"
+          }
+        }},
+        {"roses": {
+          "quantity": 1,
+          "code": "Roses",
+          "cover": {
             "type": "nappy",
             "img": "url",
             "code": "N"
           },
-          "itemTwo": {
-            "type": "blanket",
-            "img": "url",
-            "code": "B"
+          "accessory": {
+            "type": "cap",
+            "img": "url"
+          },
+          "ears": {
+            "img": "url"
           }
-        },
-        "accessory": {
-          "type": "bib",
-          "img": "url"
-        },
-        "ears": {
-          "img": "url"
-        }
-      },
-      "beige": {
-        "quantity": 1,
-        "code": "Beige",
-        "cover": {
-          "type": "blanket",
-          "img": "url",
-          "code": "B"
-        },
-        "accessory": {
-          "type": "bib",
-          "img": "url"
-        },
-        "ears": {
-          "img": "url"
-        }
-      },
-      "roses": {
-        "quantity": 1,
-        "code": "Roses",
-        "cover": {
-          "type": "nappy",
-          "img": "url",
-          "code": "N"
-        },
-        "accessory": {
-          "type": "cap",
-          "img": "url"
-        },
-        "ears": {
-          "img": "url"
-        }
-      }
-    }},
-    { "toy": {
-      "mint": {
+        }},
+        {"mint": {
         "boy": {
           "quantity": 1,
           "img": "img"
@@ -88,7 +97,9 @@
           "img": "img"
         }
       }
-    }},
+    }
+      ]},
+
     {"postcard": {
       "first" : {
         "quantity": 1,
