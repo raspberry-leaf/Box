@@ -12,6 +12,7 @@
           "color": "mint",
           "quantity": 1,
           "type": "nappy",
+          "desc": "Мятный комплект с пелёнкой",
           "img": "img_mint-n.jpg",
           "code": "MintN"
         },
@@ -19,6 +20,7 @@
           "color": "beige",
           "quantity": 1,
           "type": "blanket",
+          "desc": "Бежевый комплект с одеялом",
           "img": "img_mint-n.jpg",
           "code": "BeigeB"
         },
@@ -26,6 +28,7 @@
           "color": "roses",
           "quantity": 1,
           "type": "nappy",
+          "desc": "Цветочный комплект с пелёнкой и шапочкой",
           "img": "img_mint-n.jpg",
           "code": "RosesN"
         }
