@@ -14,18 +14,29 @@ const useStyles = makeStyles({
 	},
 
 	group: {
-		display: "flex",
-		alignItems: "flex-start",
+		width: "100%",
+
+		"& label": {
+			display: "flex",
+			alignItems: "flex-start",
+			margin: "0",
+			marginBottom: "20px",
+			marginLeft: "-9px"
+		},
+
+		"& img": {
+			width: "auto",
+			height: "auto",
+			maxWidth: "100%"
+		},
+
 	},
 
 	groupDesc: {
 		marginTop: "9px",
-		marginBottom: "20px",
+		marginBottom: "10px",
 	},
 
-	groupImg: {
-		marginLeft: "-30px"
-	}
 
 })
 

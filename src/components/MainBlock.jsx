@@ -11,7 +11,22 @@ const useStyles = makeStyles({
 		fontSize: "20px",
 		marginBottom: "15px",
 		letterSpacing: "0.6px",
-		textAlign: "center"
+		textAlign: "center",
+
+		"& span": {
+			position: "relative",
+		},
+
+		"& span:before": {
+			content: "''",
+			display: "block",
+			width: "100%",
+			height: "15%",
+			position: "absolute",
+			left: "0",
+			bottom: "0",
+			boxShadow: "0px 3px 5px 0px #ffa0af"
+		}
 	},
 
 })
@@ -23,7 +38,7 @@ const MainBlock = (props) => {
 		<div>
 			<Typography component="h2" className={classes.subtitle}>
 				{props.condition === "base"
-					? "Выберите базовый комплект:"
+					? <span>Выберите базовый комплект:</span>
 					: ''
 				}
 			</Typography>
