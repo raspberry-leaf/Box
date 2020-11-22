@@ -80,7 +80,9 @@ const Item = (props) => {
 												 control={<Radio />}
 												 label={
 							<div>
-								<p className={classes.groupTitle}>{item.title}</p>
+								<p className={classes.groupTitle}>
+									{item.title}
+								</p>
 								<p className={classes.groupDesc}>
 									{props.condition === "base"
 										? item.type === "standard"
@@ -91,7 +93,11 @@ const Item = (props) => {
 										: ''
 									}
 								</p>
-								<img className={classes.groupImg} src={require(`../img/${props.condition}/${item.img}`).default}/>
+								{item.img
+									? <img className={classes.groupImg}
+										   src={require(`../img/${props.condition}/${item.img}`).default}/>
+									: ''
+								}
 							</div>}/>
 
 					})

@@ -27,7 +27,7 @@
       "rate": [
         {
           "type": "yes",
-          "rate": 420
+          "rate": 340
         },
         {
           "type": "no",
@@ -37,7 +37,16 @@
     },
     {
       "name": "extra",
-      "rate": 755
+      "rate": [
+        {
+          "type": "yes",
+          "rate": 755
+        },
+        {
+          "type": "no",
+          "rate": 0
+        }
+      ]
     },
     {
       "name": "postcard",

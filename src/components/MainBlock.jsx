@@ -40,9 +40,13 @@ const MainBlock = (props) => {
 					? <span>Выберите базовый комплект:</span>
 					: props.condition === "toy"
 						? <span>Выберите игрушку:</span>
-						: 'props.condition === "accessory"
+						: props.condition === "accessory"
 							? <span>Заменить грызунок-ушки на грызунок ручной вязки?</span>
-							: ''
+							: props.condition === "extra"
+								? <span>Добавить мороженое?</span>
+								:  props.condition === "postcard"
+									? <span>Выберите открытку:</span>
+									: ''
 				}
 			</Typography>
 			<Item data={props.data}
