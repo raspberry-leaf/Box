@@ -1,159 +1,148 @@
 {
   "data": [
-    {
-      "name": "result",
-      "base": "",
-      "toy": ""
-    },
     { "name": "base",
       "desc": "В базу входят: <br>- пелёнка (90*120 см) или одеяло (90*120 см), <br>- нагрудник (> 6 мес) или шапочка (0-3 мес), <br>- грызунок из бука с шуршащими ушками",
+      "quantity": 1,
       "items": [
         {
-          "color": "mint",
           "quantity": 1,
-          "type": "nappy",
-          "desc": "Мятный комплект с пелёнкой и нагрудником",
+          "name": "mint",
+          "type": "standard",
+          "title": "Мятный комплект",
           "img": "img_mint-n.jpg",
-          "code": "MintN"
+          "code": "STD-Mint"
         },
         {
-          "color": "beige",
           "quantity": 1,
-          "type": "blanket",
-          "desc": "Бежевый комплект с одеялом и нагрудником",
+          "name": "beige",
+          "type": "deluxe",
+          "option": "1",
+          "desc": "Бежевый комплект",
           "img": "img_mint-n.jpg",
-          "code": "BeigeB"
+          "code": "DLX-Beige"
         },
         {
-          "color": "roses",
           "quantity": 1,
-          "type": "nappy",
-          "desc": "Цветочный комплект с пелёнкой и шапочкой",
+          "name": "roses",
+          "type": "deluxe",
+          "option": "2",
+          "desc": "Цветочный комплект",
           "img": "img_mint-n.jpg",
-          "code": "RosesN"
+          "code": "DLX-Roses"
         }
       ]
     },
     {
       "name": "toy",
-      "desc": "Состав базового комплекта: <br>- пелёнка (90*120 см) / одеяло (90*120 см), <br>- нагрудник (> 6 мес) / шапочка (0-3 мес), <br>- грызунок из бука с шуршащими ушками",
+      "desc": "",
+      "quantity": 1,
       "items": [
-        {"beige": {
+        {
           "quantity": 1,
-          "code": "Beige",
-          "cover": {
-            "type": "blanket",
-            "img": "url",
-            "code": "B"
-          },
-          "accessory": {
-            "type": "bib",
-            "img": "url"
-          },
-          "ears": {
-            "img": "url"
-          }
-        }},
-        {"roses": {
-          "quantity": 1,
-          "code": "Roses",
-          "cover": {
-            "type": "nappy",
-            "img": "url",
-            "code": "N"
-          },
-          "accessory": {
-            "type": "cap",
-            "img": "url"
-          },
-          "ears": {
-            "img": "url"
-          }
-        }},
-        {"mint": {
-        "boy": {
-          "quantity": 1,
-          "img": "img"
+          "name": "girlMint",
+          "title": "Зайка в платье",
+          "img": "img_mint-n.jpg",
+          "code": "BG-Mint"
         },
-        "girl": {
+        {
           "quantity": 1,
-          "img": "img"
+          "name": "boyGreen",
+          "title": "Зайка в шортах",
+          "img": "img_mint-n.jpg",
+          "code": "BB-Green"
         }
-      },
-      "beige": {
-        "boy": {
+      ]
+    },
+    {
+      "name": "accessory",
+      "desc": "",
+      "quantity": 1,
+      "items": [
+        {
           "quantity": 1,
-          "img": "img"
+          "name": "leaves",
+          "title": "Грызунок с листочками",
+          "img": "img_mint-n.jpg",
+          "code": "ACS-Leaves"
         },
-        "girl": {
+        {
           "quantity": 1,
-          "img": "img"
+          "name": "hearts",
+          "title": "Грызунок с сердечками",
+          "img": "img_mint-n.jpg",
+          "code": "ACS-Hearts"
         }
-      },
-      "roses": {
-        "boy": {
+      ]
+    },
+    {
+      "name": "extra",
+      "desc": "",
+      "quantity": 1,
+      "items": [
+        {
           "quantity": 1,
-          "img": "img"
+          "name": "mint",
+          "title": "Мятное мроженое",
+          "img": "img_mint-n.jpg",
+          "code": "ICE-Mint"
         },
-        "girl": {
+        {
           "quantity": 1,
-          "img": "img"
+          "name": "strawberry",
+          "title": "Клубничное мороженое",
+          "img": "img_mint-n.jpg",
+          "code": "ICE-Strawberry"
+        },
+        {
+          "quantity": 1,
+          "name": "lemon",
+          "title": "Лимонное мороженое",
+          "img": "img_mint-n.jpg",
+          "code": "ICE-Lemon"
         }
-      }
+      ]
+    },
+    {
+      "name": "postcard",
+      "desc": "",
+      "quantity": 1,
+      "items": [
+        {
+          "quantity": 1,
+          "name": "one",
+          "title": "Открытка 'Пожелание'",
+          "img": "img_mint-n.jpg",
+          "code": "P-One"
+        },
+        {
+          "quantity": 1,
+          "name": "two",
+          "title": "Открытка 'Пожелание'",
+          "img": "img_mint-n.jpg",
+          "code": "P-Two"
+        },
+        {
+          "quantity": 1,
+          "name": "three",
+          "title": "Открытка 'Пожелание'",
+          "img": "img_mint-n.jpg",
+          "code": "P-Three"
+        },
+        {
+          "quantity": 1,
+          "name": "four",
+          "title": "Открытка 'Пожелание'",
+          "img": "img_mint-n.jpg",
+          "code": "P-Four"
+        },
+        {
+          "quantity": 1,
+          "name": "five",
+          "title": "Открытка 'Пожелание'",
+          "img": "img_mint-n.jpg",
+          "code": "P-Five"
+        }
+      ]
     }
-      ]},
-
-    {"postcard": {
-      "first" : {
-        "quantity": 1,
-        "img": "url"
-      },
-      "second" : {
-        "quantity": 1,
-        "img": "url"
-      },
-      "third" : {
-        "quantity": 1,
-        "img": "url"
-      },
-      "fourth" : {
-        "quantity": 1,
-        "img": "url"
-      },
-      "fifth" : {
-        "quantity": 1,
-        "img": "url"
-      }
-    }},
-    {"extra": {
-      "iceCream": {
-        "green": {
-          "quantity": 1,
-          "img": "url"
-        },
-        "red": {
-          "quantity": 1,
-          "img": "url"
-        },
-        "yellow": {
-          "quantity": 1,
-          "img": "url"
-        }
-      },
-      "accessory": {
-        "leaves": {
-          "quantity": 1,
-          "img": "url"
-        },
-        "hearts": {
-          "quantity": 1,
-          "img": "url"
-        },
-        "stars": {
-          "quantity": 1,
-          "img": "url"
-        }
-      }
-    }}
   ]
 }

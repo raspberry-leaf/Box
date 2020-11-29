@@ -9,25 +9,30 @@
       "name": "base",
       "rate": [
         {
-          "type": "nappy",
-          "rate": 2769
+          "type": "standard",
+          "rate": 2385
         },
         {
-          "type": "blanket",
-          "rate": 3225
+          "type": "deluxe",
+          "rate": 3550
         }
       ]
     },
     {
       "name": "toy",
-      "rate": 1706
+      "rate": 2160
     },
-    {"postcard": 494},
-    {"extra": 615},
-    {"bonus": {
-      "one": 1,
-      "two": 2,
-      "three": 2
-    }}
+    {
+      "name": "accessory",
+      "rate": 420
+    },
+    {
+      "name": "extra",
+      "rate": 755
+    },
+    {
+      "name": "postcard",
+      "rate": 155
+    }
   ]
 }
