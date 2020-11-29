@@ -3,6 +3,8 @@ import {makeStyles} from "@material-ui/core/styles";
 import main from "../img/img_main.png";
 import Typography from "@material-ui/core/Typography";
 import Item from "./Item";
+import ButtonDone from "./ButtonDone";
+import Buttons from "./Buttons";
 
 const useStyles = makeStyles({
 
@@ -45,6 +47,8 @@ const MainBlock = (props) => {
 			<Item data={props.data}
 				  condition={props.condition}
 				  handleChange={props.handleChange}/>
+			<Buttons condition={props.condition}
+					 handleCondition={props.handleCondition}/>
 
 		</div>
 

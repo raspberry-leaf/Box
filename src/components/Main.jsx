@@ -5,6 +5,7 @@ import {createMuiTheme, makeStyles, ThemeProvider} from "@material-ui/core/style
 import {Container} from "@material-ui/core";
 import Head from "./Head";
 import MainBlock from "./MainBlock";
+import {Sticky, StickyContainer} from "react-sticky";
 
 const useStyles = makeStyles({
 	box: {
@@ -13,7 +14,7 @@ const useStyles = makeStyles({
 
 	title: {
 		padding: "15px",
-		margin: "0 auto"
+		maxWidth: "100%"
 	},
 
 	h1: {
@@ -35,7 +36,7 @@ const useStyles = makeStyles({
 		'&:first-of-type': {
 			flexGrow: "1"
 		}
-	},
+	}
 
 })
 
@@ -59,9 +60,40 @@ const Main = (props) => {
 			default:
 				setCondition('base')
 		}
+
+		setProgress(progress + 100/5)
 	}
 
-	const handleChange = () => {}
+	const handleChange = (item) => {
+
+		handleRate(item)
+
+
+
+
+	}
+
+	const handleRate = (code) => {
+		const data = [...state]
+		const arrRate = [...initialRate]
+
+		const currentData = data.find(item => item.name === condition);
+		const currentItem = currentData.items.find(item => item.code === code)
+		const currentRate = arrRate.find(item => item.name === condition)
+
+		const finalRate = () => {
+			if (currentRate.rate.length > 1) {
+				const type = currentRate.rate.find(item => item.type === currentItem.type)
+				return type.rate;
+			} else {
+				return currentRate.rate;
+			}
+		}
+
+		setRate(finalRate())
+
+
+	}
 
 
 	const muller = {
@@ -101,17 +133,24 @@ const Main = (props) => {
 	const classes = useStyles();
 
 	return (
-		<ThemeProvider theme={theme}>
+		<StickyContainer >
+			<ThemeProvider theme={theme}>
 			<CssBaseline />
-			<Container maxWidth="sm" className={classes.title}>
-				<Head progress={progress}/>
-			</Container>
+			<Sticky className="sticky">
+				{({style}) => (
+					<div style={{...style, zIndex: '999'}}>
+						<Head progress={progress}
+							  rate={rate}/>
+					</div>
+				)}
+			</Sticky>
 			<Container maxWidth="sm">
 				<MainBlock data={state}
 						   condition={condition}
 						   handleChange={handleChange}/>
 			</Container>
 		</ThemeProvider>
+		</StickyContainer>
 	);
 }
 

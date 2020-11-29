@@ -57,11 +57,11 @@ const Item = (props) => {
 	const currentItems = props.data.find(item => item.name === props.condition)
 	const resultItem = props.data.find(item => item.name === "result")
 
-	const [value, setValue] = React.useState(currentItems.items[0].code);
+	const [value, setValue] = useState(0);
 
 	const handleChange = (event) => {
 		setValue(event.target.value);
-		props.handleChange()
+		props.handleChange(event.target.value)
 	};
 
 	return (
