@@ -54,7 +54,7 @@ const Main = (props) => {
 
 		switch(condition) {
 			case 'base':
-				setCondition('text')
+				setCondition('toy')
 				break
 			default:
 				setCondition('base')

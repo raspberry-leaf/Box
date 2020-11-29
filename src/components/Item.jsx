@@ -27,14 +27,25 @@ const useStyles = makeStyles({
 		"& img": {
 			width: "auto",
 			height: "auto",
-			maxWidth: "100%"
+			maxWidth: "100%",
+			border: "3px solid transparent",
+			transition: ".2s ease-in-out"
 		},
+
+		"& .Mui-checked +.MuiTypography-root img": {
+			border: "3px solid #ffa0af",
+		}
 
 	},
 
+	groupTitle: {
+		marginTop: "10px",
+		marginBottom: "0",
+		fontWeight: "700"
+	},
+
 	groupDesc: {
-		marginTop: "9px",
-		marginBottom: "10px",
+		margin: "10px 0 15px 0",
 	},
 
 
@@ -67,10 +78,20 @@ const Item = (props) => {
 												 value={item.code}
 												 control={<Radio />}
 												 label={
-												 	<div>
-														<p className={classes.groupDesc}>{item.desc}</p>
-														<img className={classes.groupImg} src={require(`../img/${props.condition}/${item.img}`).default}/>
-												 	</div>}/>
+							<div>
+								<p className={classes.groupTitle}>{item.title}</p>
+								<p className={classes.groupDesc}>
+									{props.condition === "base"
+										? item.type === "standard"
+											? <span dangerouslySetInnerHTML={{__html: "- пелёнка 90*120 см,</br>- нагрудник (> 6 мес),</br>- грызунок из бука с шуршащими ушками"}}></span>
+											: item.option === 1
+												? <span dangerouslySetInnerHTML={{__html: "- одеяло 90*120 см,<br>- нагрудник (> 6 мес),<br>- грызунок из бука с шуршащими ушками"}}></span>
+												: <span dangerouslySetInnerHTML={{__html: "- пелёнка 90*120 см,<br>- шапочка (0-3 мес),<br>- нагрудник (> 6 мес),<br>- грызунок из бука с шуршащими ушками"}}></span>
+										: ''
+									}
+								</p>
+								<img className={classes.groupImg} src={require(`../img/${props.condition}/${item.img}`).default}/>
+							</div>}/>
 
 					})
 
