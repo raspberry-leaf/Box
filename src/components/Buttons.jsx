@@ -4,7 +4,10 @@ import ButtonDone from "./ButtonDone";
 
 const useStyles = makeStyles({
 	buttons: {
-		marginBottom: "30px"
+		marginBottom: "30px",
+		display: "flex",
+		alignItems: "center",
+		justifyContent: "space-between",
 	},
 })
 const Buttons = (props) => {
@@ -12,9 +15,6 @@ const Buttons = (props) => {
 	
 	return (
 		<div className={classes.buttons}>
-			<ButtonDone condition={props.condition}
-						handleCondition={props.handleCondition}
-						direction={"next"}/>
 			{props.condition !== "base"
 				? <ButtonDone condition={props.condition}
 							  handleCondition={props.handleCondition}
@@ -22,7 +22,10 @@ const Buttons = (props) => {
 
 				: ''
 			}
-
+			<ButtonDone condition={props.condition}
+						handleCondition={props.handleCondition}
+						disable={props.disable}
+						direction={"next"}/>
 		</div>
 	)
 }

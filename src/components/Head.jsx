@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import main from "../img/img_main.png";
 import Typography from "@material-ui/core/Typography";
@@ -22,14 +22,14 @@ const useStyles = makeStyles({
 	subtitle: {
 		fontWeight: "700",
 		fontSize: "22px",
-		margin: "20px auto",
+		margin: "15px auto",
 		letterSpacing: "0.8px",
 		textAlign: "center"
 	},
 
 	top: {
 		margin: "0 auto",
-		padding: "20px 30px",
+		padding: "15px 30px",
 		backgroundColor: "rgba(255,255,255,0.9)",
 	}
 

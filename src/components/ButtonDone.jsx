@@ -16,17 +16,34 @@ const useStyles = makeStyles({
 		background: "#166316",
 		color: "#ffffff",
 		borderRadius: "4px",
+		pointerEvents: "auto",
+		opacity: "1"
 	},
+
+	prev: {
+		background: "#ffa0af",
+	},
+
+	disable: {
+		pointerEvents: "none",
+		opacity: "0.5"
+	}
 })
 const ButtonDone = (props) => {
 	const classes = useStyles();
 	
 	return (
 		<button type="button"
-				className={classes.done} onClick={() => props.handleCondition()}>
+				className={props.disable === 0
+					? `${classes.done} ${classes.disable}`
+					: props.direction === "prev"
+						? `${classes.done} ${classes.prev}`
+						: classes.done
+				}
+				onClick={() => props.handleCondition(props.direction !== "next" ? "reset" : '')}>
 			{props.direction === "next"
 				? "Далее"
-				: "Назад"
+				: "Собрать заново"
 			}
 		</button>
 	)

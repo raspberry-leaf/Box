@@ -1,7 +1,7 @@
 {
   "data": [
     { "name": "base",
-      "desc": "Базовый комплект - это основа Raspberry Box. Для создания использованы натуральные и гипоаллергенные материалы. Ткани: муслин (100% хлопок) или трикотаж (95% хлопок, 5% лайкра). Элементы, входящие в комплект указаны в описании.",
+      "desc": "Базовый комплект - это основа Raspberry Box. Для его создания использованы натуральные и гипоаллергенные материалы. Элементы, входящие в комплект, указаны в описании.",
       "quantity": 1,
       "items": [
         {
@@ -30,28 +30,32 @@
           "img": "img_mint-n.jpg",
           "code": "DLX-Roses"
         }
-      ]
+      ],
+      "finalCode": "",
+      "finalRate": ""
     },
     {
       "name": "toy",
-      "desc": "",
+      "desc": "Зайчик станет лучшим другом малыша. Игрушка ручной работы выполнена из умягчённого льна. Наполнитель: гипоаллергенный холлофайбер. Одежда из 100% хлопка. Ручная вышивка. Рост зайчика: 30 см",
       "quantity": 1,
       "items": [
         {
           "quantity": 1,
           "name": "girlMint",
-          "title": "Зайка в платье",
+          "title": "Зайчик в платье",
           "img": "img_mint-n.jpg",
           "code": "BG-Mint"
         },
         {
           "quantity": 1,
           "name": "boyGreen",
-          "title": "Зайка в шортах",
+          "title": "Зайчик в шортах",
           "img": "img_mint-n.jpg",
           "code": "BB-Green"
         }
-      ]
+      ],
+      "finalCode": "",
+      "finalRate": ""
     },
     {
       "name": "accessory",
@@ -61,6 +65,7 @@
         {
           "quantity": 1,
           "name": "leaves",
+          "type": "yes",
           "title": "Грызунок с листочками",
           "img": "img_mint-n.jpg",
           "code": "ACS-Leaves"
@@ -68,11 +73,22 @@
         {
           "quantity": 1,
           "name": "hearts",
+          "type": "yes",
           "title": "Грызунок с сердечками",
           "img": "img_mint-n.jpg",
           "code": "ACS-Hearts"
+        },
+        {
+          "quantity": 1,
+          "name": "no",
+          "type": "no",
+          "title": "Нет, спасибо",
+          "img": "",
+          "code": ""
         }
-      ]
+      ],
+      "finalCode": "",
+      "finalRate": ""
     },
     {
       "name": "extra",
@@ -100,7 +116,9 @@
           "img": "img_mint-n.jpg",
           "code": "ICE-Lemon"
         }
-      ]
+      ],
+      "finalCode": "",
+      "finalRate": ""
     },
     {
       "name": "postcard",
@@ -142,7 +160,9 @@
           "img": "img_mint-n.jpg",
           "code": "P-Five"
         }
-      ]
+      ],
+      "finalCode": "",
+      "finalRate": ""
     }
   ]
 }

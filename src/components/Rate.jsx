@@ -1,10 +1,10 @@
-import React, {useState} from "react";
+import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
 	rate: {
 		textAlign: "center",
-		marginTop: "20px",
+		marginTop: "15px",
 		fontSize: "20px"
 	}
 

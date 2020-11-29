@@ -1,10 +1,7 @@
-import React, {useState} from "react";
+import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
-import main from "../img/img_main.png";
 import Typography from "@material-ui/core/Typography";
 import Item from "./Item";
-import ButtonDone from "./ButtonDone";
-import Buttons from "./Buttons";
 
 const useStyles = makeStyles({
 
@@ -41,15 +38,17 @@ const MainBlock = (props) => {
 			<Typography component="h2" className={classes.subtitle}>
 				{props.condition === "base"
 					? <span>Выберите базовый комплект:</span>
-					: ''
+					: props.condition === "toy"
+						? <span>Выберите игрушку:</span>
+						: 'props.condition === "accessory"
+							? <span>Заменить грызунок-ушки на грызунок ручной вязки?</span>
+							: ''
 				}
 			</Typography>
 			<Item data={props.data}
 				  condition={props.condition}
-				  handleChange={props.handleChange}/>
-			<Buttons condition={props.condition}
-					 handleCondition={props.handleCondition}/>
-
+				  handleChange={props.handleChange}
+				  handleCondition={props.handleCondition}/>
 		</div>
 
 	);

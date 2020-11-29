@@ -24,7 +24,16 @@
     },
     {
       "name": "accessory",
-      "rate": 420
+      "rate": [
+        {
+          "type": "yes",
+          "rate": 420
+        },
+        {
+          "type": "no",
+          "rate": 0
+        }
+      ]
     },
     {
       "name": "extra",

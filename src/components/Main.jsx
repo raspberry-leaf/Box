@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import Typography from "@material-ui/core/Typography";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import {createMuiTheme, makeStyles, ThemeProvider} from "@material-ui/core/styles";
 import {Container} from "@material-ui/core";
@@ -49,28 +48,68 @@ const Main = (props) => {
 	const [state,setState] = useState(initialData);
 	const [condition,setCondition] = useState("base");
 	const [rate,setRate] = useState(0);
+	const [totalRate,setTotalRate] = useState(0);
 	const [progress, setProgress] = useState(0);
+	const [code, setCode] = useState('');
 
-	const handleCondition = () => {
+	const handleProgress = () => {
+		setProgress(progress + 100/5)
+	}
+
+	const handleCondition = (reset) => {
+
+		if (reset === "reset") {
+			setTotalRate(0);
+			setRate(0);
+			setProgress(0);
+			setCode('');
+		}
+
+		setRate(0);
+		handleProgress();
 
 		switch(condition) {
 			case 'base':
 				setCondition('toy')
 				break
+			case 'toy':
+				if (reset !== "reset") {
+					setCondition('accessory')
+				} else {
+					setCondition('base')
+				}
+
+				break
+			case 'accessory':
+				if (reset !== "reset") {
+					setCondition('extra')
+				} else {
+					setCondition('base')
+				}
+				break
+			case 'extra':
+				if (reset !== "reset") {
+					setCondition('postcard')
+				} else {
+					setCondition('base')
+				}
+				break
 			default:
 				setCondition('base')
 		}
-
-		setProgress(progress + 100/5)
 	}
 
 	const handleChange = (item) => {
 
-		handleRate(item)
+		handleRate(item);
+		handleCode(item);
 
+	}
 
-
-
+	const handleCode = (item) => {
+		const data = [...state]
+		const current = data.find(elem => elem.name === condition);
+		current.finalCode = item.code;
 	}
 
 	const handleRate = (code) => {
@@ -90,8 +129,10 @@ const Main = (props) => {
 			}
 		}
 
-		setRate(finalRate())
+		currentData.finalRate = finalRate();
 
+		setTotalRate(totalRate - rate + finalRate())
+		setRate(finalRate());
 
 	}
 
@@ -140,13 +181,14 @@ const Main = (props) => {
 				{({style}) => (
 					<div style={{...style, zIndex: '999'}}>
 						<Head progress={progress}
-							  rate={rate}/>
+							  rate={totalRate}/>
 					</div>
 				)}
 			</Sticky>
 			<Container maxWidth="sm">
 				<MainBlock data={state}
 						   condition={condition}
+						   handleCondition={handleCondition}
 						   handleChange={handleChange}/>
 			</Container>
 		</ThemeProvider>

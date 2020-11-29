@@ -4,6 +4,7 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
+import Buttons from "./Buttons";
 
 const useStyles = makeStyles({
 	desc: {
@@ -83,10 +84,10 @@ const Item = (props) => {
 								<p className={classes.groupDesc}>
 									{props.condition === "base"
 										? item.type === "standard"
-											? <span dangerouslySetInnerHTML={{__html: "- пелёнка 90*120 см,</br>- нагрудник (> 6 мес),</br>- грызунок из бука с шуршащими ушками"}}></span>
+											? <span dangerouslySetInnerHTML={{__html: "- пелёнка 90*120 см,</br>- нагрудник (> 6 мес),</br>- грызунок из бука с шуршащими ушками,</br>* материал: муслин (100% хлопок)"}}></span>
 											: item.option === 1
-												? <span dangerouslySetInnerHTML={{__html: "- одеяло 90*120 см,<br>- нагрудник (> 6 мес),<br>- грызунок из бука с шуршащими ушками"}}></span>
-												: <span dangerouslySetInnerHTML={{__html: "- пелёнка 90*120 см,<br>- шапочка (0-3 мес),<br>- нагрудник (> 6 мес),<br>- грызунок из бука с шуршащими ушками"}}></span>
+												? <span dangerouslySetInnerHTML={{__html: "- одеяло 90*120 см,<br>- нагрудник (> 6 мес),<br>- грызунок из бука с шуршащими ушками,</br>* материал: муслин (100% хлопок)"}}></span>
+												: <span dangerouslySetInnerHTML={{__html: "- пелёнка 90*120 см,<br>- шапочка (0-3 мес),<br>- нагрудник (> 6 мес),<br>- грызунок из бука с шуршащими ушками,</br>* материал: трикотаж (95% хлопок, 5% лайкра)"}}></span>
 										: ''
 									}
 								</p>
@@ -99,6 +100,9 @@ const Item = (props) => {
 
 				</RadioGroup>
 			</FormControl>
+			<Buttons disable={currentItems.finalCode !== '' ? 1 : 0}
+					 condition={props.condition}
+					 handleCondition={props.handleCondition}/>
 		</div>
 
 	);
