@@ -80,6 +80,14 @@
         },
         {
           "quantity": 1,
+          "name": "flower",
+          "type": "yes",
+          "title": "Грызунок с цветочком, сердечком и листиком",
+          "img": "img_mint-n.jpg",
+          "code": "ACS-Flower"
+        },
+        {
+          "quantity": 1,
           "name": "no",
           "type": "no",
           "title": "Нет, спасибо",

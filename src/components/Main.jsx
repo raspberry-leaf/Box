@@ -35,6 +35,15 @@ const useStyles = makeStyles({
 		'&:first-of-type': {
 			flexGrow: "1"
 		}
+	},
+
+	extra: {
+		fontSize: "20px",
+		letterSpacing: "0.5px",
+		textAlign: "center",
+		display: "block",
+		lineHeight:"130%",
+		padding: "40px 20px",
 	}
 
 })
@@ -186,10 +195,14 @@ const Main = (props) => {
 				)}
 			</Sticky>
 			<Container maxWidth="sm">
-				<MainBlock data={state}
-						   condition={condition}
-						   handleCondition={handleCondition}
-						   handleChange={handleChange}/>
+				{condition === "base" && state[0].quantity < 1
+					? <span className={classes.extra} dangerouslySetInnerHTML={ {__html: "Все Raspberry Boxes забронированы. <br>Мы уже собираем новые, и в ближайшее время они здесь появятся."}}></span>
+					: <MainBlock data={state}
+								 condition={condition}
+								 handleCondition={handleCondition}
+								 handleChange={handleChange}/>
+				}
+
 			</Container>
 		</ThemeProvider>
 		</StickyContainer>
