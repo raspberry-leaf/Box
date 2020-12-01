@@ -91,7 +91,7 @@
           "name": "no",
           "type": "no",
           "title": "Нет, спасибо",
-          "code": ""
+          "code": "ACS"
         }
       ],
       "finalCode": "",
@@ -131,7 +131,7 @@
           "name": "no",
           "type": "no",
           "title": "Нет, спасибо",
-          "code": ""
+          "code": "ICE"
         }
       ],
       "finalCode": "",

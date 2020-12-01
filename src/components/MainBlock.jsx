@@ -50,6 +50,7 @@ const MainBlock = (props) => {
 				}
 			</Typography>
 			<Item data={props.data}
+				  value={props.value}
 				  condition={props.condition}
 				  handleChange={props.handleChange}
 				  handleCondition={props.handleCondition}/>

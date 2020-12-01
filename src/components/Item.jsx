@@ -58,10 +58,7 @@ const Item = (props) => {
 	const currentItems = props.data.find(item => item.name === props.condition)
 	const resultItem = props.data.find(item => item.name === "result")
 
-	const [value, setValue] = useState(0);
-
 	const handleChange = (event) => {
-		setValue(event.target.value);
 		props.handleChange(event.target.value)
 	};
 
@@ -72,7 +69,7 @@ const Item = (props) => {
 				<RadioGroup aria-label={props.condition}
 							name={props.condition}
 							className={classes.group}
-							value={value}
+							value={props.value}
 							onChange={handleChange}>
 					{currentItems.items.map((item, i) => {
 						return <FormControlLabel key={i}
@@ -106,7 +103,7 @@ const Item = (props) => {
 
 				</RadioGroup>
 			</FormControl>
-			<Buttons disable={currentItems.finalCode !== '' ? 1 : 0}
+			<Buttons disable={props.value !== '' ? 1 : 0}
 					 condition={props.condition}
 					 handleCondition={props.handleCondition}/>
 		</div>

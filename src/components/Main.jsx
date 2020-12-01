@@ -60,6 +60,7 @@ const Main = (props) => {
 	const [totalRate,setTotalRate] = useState(0);
 	const [progress, setProgress] = useState(0);
 	const [code, setCode] = useState('');
+	const [value, setValue] = useState('');
 
 	const handleProgress = () => {
 		setProgress(progress + 100/5)
@@ -72,10 +73,13 @@ const Main = (props) => {
 			setRate(0);
 			setProgress(0);
 			setCode('');
+			setState(initialData)
+		} else {
+			setRate(0);
+			handleProgress();
 		}
 
-		setRate(0);
-		handleProgress();
+		setValue('');
 
 		switch(condition) {
 			case 'base':
@@ -113,12 +117,17 @@ const Main = (props) => {
 		handleRate(item);
 		handleCode(item);
 
+		setValue(item)
+
 	}
 
 	const handleCode = (item) => {
+		console.log(code)
+
 		const data = [...state]
 		const current = data.find(elem => elem.name === condition);
-		current.finalCode = item.code;
+		current.finalCode = item;
+		setCode(code + item + '-')
 	}
 
 	const handleRate = (code) => {
@@ -198,6 +207,7 @@ const Main = (props) => {
 				{condition === "base" && state[0].quantity < 1
 					? <span className={classes.extra} dangerouslySetInnerHTML={ {__html: "Все Raspberry Boxes забронированы. <br>Мы уже собираем новые, и в ближайшее время они здесь появятся."}}></span>
 					: <MainBlock data={state}
+								 value={value}
 								 condition={condition}
 								 handleCondition={handleCondition}
 								 handleChange={handleChange}/>
