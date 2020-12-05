@@ -9,7 +9,7 @@ import Buttons from "./Buttons";
 const useStyles = makeStyles({
 	desc: {
 		margin: "0",
-		fontSize: "18px",
+
 		lineHeight: "130%",
 		marginBottom: "20px"
 	},
@@ -42,11 +42,13 @@ const useStyles = makeStyles({
 	groupTitle: {
 		marginTop: "10px",
 		marginBottom: "0",
-		fontWeight: "700"
+		fontWeight: "700",
+		fontSize: "14px"
 	},
 
 	groupDesc: {
 		margin: "10px 0 15px 0",
+		fontSize: "14px"
 	},
 
 

@@ -8,6 +8,23 @@ const useStyles = makeStyles({
 		display: "flex",
 		alignItems: "center",
 		justifyContent: "space-between",
+
+		['@media(max-width: 425px)']: {
+			flexDirection: "column",
+
+			"& button:first-of-type": {
+				width: "100%",
+				order: "2"
+			},
+
+			"& button:last-of-type": {
+				width: "100%",
+				marginBottom: "10px",
+				order: "1"
+			}
+		},
+
+
 	},
 })
 const Buttons = (props) => {
@@ -22,10 +39,14 @@ const Buttons = (props) => {
 
 				: ''
 			}
-			<ButtonDone condition={props.condition}
-						handleCondition={props.handleCondition}
-						disable={props.disable}
-						direction={"next"}/>
+			{props.condition !== "result"
+
+				? <ButtonDone condition={props.condition}
+							  handleCondition={props.handleCondition}
+							  disable={props.disable}
+							  direction={"next"}/>
+				: ''
+			}
 		</div>
 	)
 }

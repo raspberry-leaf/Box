@@ -40,10 +40,12 @@ const ButtonDone = (props) => {
 						? `${classes.done} ${classes.prev}`
 						: classes.done
 				}
-				onClick={() => props.handleCondition(props.direction !== "next" ? "reset" : '')}>
-			{props.direction === "next"
-				? "Далее"
-				: "Собрать заново"
+				onClick={() => props.condition === "result" ? props.handleResult() : props.handleCondition(props.direction !== "next" ? "reset" : '')}>
+			{props.condition === "result"
+				? "Скопировать код и вернуться в Instagram"
+				: props.direction === "next"
+					? "Далее"
+					: "Собрать заново"
 			}
 		</button>
 	)

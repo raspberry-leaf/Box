@@ -4,8 +4,8 @@ import {makeStyles} from "@material-ui/core/styles";
 const useStyles = makeStyles({
 	rate: {
 		textAlign: "center",
-		marginTop: "15px",
-		fontSize: "20px"
+		marginTop: "10px",
+		fontSize: "16px"
 	}
 
 })
@@ -15,7 +15,11 @@ const Rate = (props) => {
 
 	return (
 		<div className={classes.rate}>
-			Цена: {props.rate} руб.
+			{props.condition === "result"
+				? "Ваша цена: "
+				: "Цена: "
+			}
+			{props.rate} руб.
 		</div>
 
 	);

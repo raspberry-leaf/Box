@@ -1,14 +1,17 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import {createMuiTheme, makeStyles, ThemeProvider} from "@material-ui/core/styles";
 import {Container} from "@material-ui/core";
 import Head from "./Head";
 import MainBlock from "./MainBlock";
 import {Sticky, StickyContainer} from "react-sticky";
+import ScrollToTop from "./ScrollToTop";
+import GoogleFontLoader from 'react-google-font-loader';
 
 const useStyles = makeStyles({
 	box: {
 		marginBottom: "45px",
+		fontSize: "14px"
 	},
 
 	title: {
@@ -68,6 +71,8 @@ const Main = (props) => {
 
 	const handleCondition = (reset) => {
 
+		handleCode(value);
+
 		if (reset === "reset") {
 			setTotalRate(0);
 			setRate(0);
@@ -107,18 +112,23 @@ const Main = (props) => {
 					setCondition('base')
 				}
 				break
+			case 'postcard':
+				if (reset !== "reset") {
+					setCondition('result')
+				} else {
+					setCondition('base')
+				}
+				break
 			default:
 				setCondition('base')
 		}
+
 	}
 
 	const handleChange = (item) => {
 
 		handleRate(item);
-		handleCode(item);
-
 		setValue(item)
-
 	}
 
 	const handleCode = (item) => {
@@ -127,7 +137,7 @@ const Main = (props) => {
 		const data = [...state]
 		const current = data.find(elem => elem.name === condition);
 		current.finalCode = item;
-		setCode(code + item + '-')
+		setCode(condition !== "postcard" ? code + item + '-' : code + item)
 	}
 
 	const handleRate = (code) => {
@@ -154,20 +164,13 @@ const Main = (props) => {
 
 	}
 
+	const handleResult = () => {
+		return false
+	}
 
-	const muller = {
-		fontFamily: 'Muller',
-		fontStyle: 'normal',
-		fontDisplay: 'swap',
-		fontWeight: 400,
-		src: `
-			local('Muller'),
-			local('Muller-Regular'),
-			url('./fonts/Muller-Regular.woff2') format('woff2')`,
-	};
 	const theme = createMuiTheme({
 		typography: {
-			fontFamily: 'Muller, Arial',
+			fontFamily:  'Montserrat',
 		},
 		palette: {
 			primary: {
@@ -178,12 +181,12 @@ const Main = (props) => {
 		overrides: {
 			MuiCssBaseline: {
 				'@global': {
-					'@font-face': [muller],
+					'@font-face': 'Montserrat',
 					body: {
 						backgroundColor: 'transparent',
 						color: '#47525E',
-						fontSize: 24,
-						lineHeight: '20px',
+						fontSize: 14,
+						lineHeight: '1',
 					},
 				},
 			},
@@ -192,30 +195,48 @@ const Main = (props) => {
 	const classes = useStyles();
 
 	return (
+		<ScrollToTop key={condition}>
+			<GoogleFontLoader
+				fonts={[
+					{
+						font: 'Montserrat',
+						weights: [400, 700],
+					},
+
+				]}
+				subsets={['cyrillic-ext']}
+			/>
 		<StickyContainer >
 			<ThemeProvider theme={theme}>
 			<CssBaseline />
+
 			<Sticky className="sticky">
 				{({style}) => (
 					<div style={{...style, zIndex: '999'}}>
 						<Head progress={progress}
-							  rate={totalRate}/>
+							  rate={totalRate}
+							  condition={condition}/>
 					</div>
 				)}
 			</Sticky>
 			<Container maxWidth="sm">
+
 				{condition === "base" && state[0].quantity < 1
 					? <span className={classes.extra} dangerouslySetInnerHTML={ {__html: "Все Raspberry Boxes забронированы. <br>Мы уже собираем новые, и в ближайшее время они здесь появятся."}}></span>
 					: <MainBlock data={state}
 								 value={value}
+								 code={code}
 								 condition={condition}
 								 handleCondition={handleCondition}
-								 handleChange={handleChange}/>
+								 handleChange={handleChange}
+								 handleResult={handleResult}/>
 				}
 
 			</Container>
+
 		</ThemeProvider>
 		</StickyContainer>
+		</ScrollToTop>
 	);
 }
 

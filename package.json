@@ -15,7 +15,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.0",
+    "react-scripts": "^4.0.0",
     "react-sticky": "^6.0.3",
     "web-vitals": "^0.2.4"
   },
@@ -48,6 +48,7 @@
   "homepage": "http://raspberry-leaf.github.io/Box",
   "devDependencies": {
     "file-loader": "^6.1.1",
+    "react-google-font-loader": "^1.1.0",
     "url-loader": "^4.1.1"
   }
 }

@@ -21,15 +21,16 @@ const useStyles = makeStyles({
 
 	subtitle: {
 		fontWeight: "700",
-		fontSize: "22px",
-		margin: "15px auto",
+		fontSize: "16px",
+		margin: "10px auto",
 		letterSpacing: "0.8px",
-		textAlign: "center"
+		textAlign: "center",
+		lineHeight: "1",
 	},
 
 	top: {
 		margin: "0 auto",
-		padding: "15px 30px",
+		padding: "10px 30px",
 		backgroundColor: "rgba(255,255,255,0.9)",
 	}
 
@@ -43,9 +44,15 @@ const Head = (props) => {
 			<a href={"https://api.instagram.com/raspberry__leaf/"} className={classes.head}>
 				<img className={classes.img} src={main}/>
 			</a>
-			<Typography component="h2" className={classes.subtitle}>Собираем «Raspberry Box»</Typography>
+			<Typography component="h2" className={classes.subtitle}>
+				{props.condition === "result"
+					? "Поздравляем! «Raspberry Box» собран"
+					: "Собираем «Raspberry Box»"
+				}
+			</Typography>
 			<Progress progress={props.progress}/>
-			<Rate rate={props.rate}/>
+			<Rate rate={props.rate}
+				  condition={props.condition}/>
 		</Container>
 	);
 }

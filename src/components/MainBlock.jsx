@@ -2,30 +2,23 @@ import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Item from "./Item";
+import Result from "./Result";
 
 const useStyles = makeStyles({
 
 	subtitle: {
 		fontWeight: "400",
-		fontSize: "20px",
-		marginBottom: "20px",
+		fontSize: "16px",
+		margin: "15px 0",
 		letterSpacing: "0.6px",
 		textAlign: "center",
 
 		"& span": {
 			position: "relative",
-		},
-
-		"& span:before": {
-			content: "''",
-			display: "block",
-			width: "100%",
-			height: "15%",
-			position: "absolute",
-			left: "0",
-			bottom: "0",
-			boxShadow: "0px 3px 5px 0px #ffa0af"
+			borderBottom: "1px solid #ffa0af"
 		}
+
+
 	},
 
 })
@@ -49,11 +42,18 @@ const MainBlock = (props) => {
 									: ''
 				}
 			</Typography>
-			<Item data={props.data}
-				  value={props.value}
-				  condition={props.condition}
-				  handleChange={props.handleChange}
-				  handleCondition={props.handleCondition}/>
+			{props.condition === "result"
+				? <Result data={props.data}
+						  code={props.code}
+						  condition={props.condition}
+						  handleResult={props.handleResult}
+						  handleCondition={props.handleCondition}/>
+				: <Item data={props.data}
+					  value={props.value}
+					  condition={props.condition}
+					  handleChange={props.handleChange}
+					  handleCondition={props.handleCondition}/>
+			}
 		</div>
 
 	);
