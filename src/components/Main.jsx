@@ -71,7 +71,7 @@ const Main = (props) => {
 
 	const handleCondition = (reset) => {
 
-		handleCode(value);
+
 
 		if (reset === "reset") {
 			setTotalRate(0);
@@ -80,6 +80,7 @@ const Main = (props) => {
 			setCode('');
 			setState(initialData)
 		} else {
+			handleCode(value);
 			setRate(0);
 			handleProgress();
 		}
@@ -132,12 +133,11 @@ const Main = (props) => {
 	}
 
 	const handleCode = (item) => {
-		console.log(code)
 
 		const data = [...state]
 		const current = data.find(elem => elem.name === condition);
 		current.finalCode = item;
-		setCode(condition !== "postcard" ? code + item + '-' : code + item)
+		setCode(condition !== "postcard" ? code + item + '-' : code + item + '-' + totalRate)
 	}
 
 	const handleRate = (code) => {
