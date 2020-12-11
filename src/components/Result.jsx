@@ -32,6 +32,49 @@ const useStyles = makeStyles({
 const Result = (props) => {
 	const classes = useStyles();
 
+	const resultArr = () => {
+		const codeInit = props.code.split("-").slice(0,-1);
+		const dataInit = props.data
+
+		let newArr = codeInit.map((item, i) => {
+
+			const current = dataInit[i].items.find(elem => {
+				if (elem.code === item && elem.img) {
+					return elem;
+				}
+			})
+
+			if (current) {
+				item = {}
+				item.title = current.title;
+				item.img = current.img;
+				item.condition = dataInit[i].name;
+
+				if (dataInit[i].name === "base") {
+					if (current.type === "standard") {
+						item.desc = "- пелёнка 90*120 см,</br>- нагрудник (> 6 мес),</br>- грызунок из бука с шуршащими ушками,</br>* материал: муслин (100% хлопок)"
+					} else if (current.option === 1) {
+						item.desc = "- одеяло 90*120 см,<br>- нагрудник (> 6 мес),<br>- грызунок из бука с шуршащими ушками,</br>* материал: муслин (100% хлопок)"
+					} else {
+						item.desc = "- пелёнка 90*120 см,<br>- шапочка (0-3 мес),<br>- нагрудник (> 6 мес),<br>- грызунок из бука с шуршащими ушками,</br>* материал: трикотаж (95% хлопок, 5% лайкра)"
+					}
+				}
+
+
+			}
+
+			return item;
+
+		})
+
+		newArr = newArr.filter(item => typeof item !== 'string')
+
+		console.log(newArr)
+
+		return newArr;
+
+	}
+
 	return (
 		<div className={classes.result}>
 			<p className={classes.desc}>Для заказа отправьте сформированный код в личные собщения @raspberry__leaf или на WhatsApp</p>
@@ -51,6 +94,21 @@ const Result = (props) => {
 			<div className={classes.contain}>
 				Состав «Raspberry Box»:
 			</div>
+			<ul>
+				{resultArr().map(item => {
+					return <li>
+						<p>{item.title}</p>
+						{item.desc
+							? <p dangerouslySetInnerHTML={{__html: `${item.desc}`}}></p>
+							: ''
+						}
+						<img className={classes.groupImg} src={require(`../img/${item.condition}/${item.img}`).default}></img>
+					</li>
+				})}
+					<li>Эко-сумка ручной работы</li>
+					<li>Бесплатная доставка по России</li>
+
+			</ul>
 			<ButtonDone condition={props.condition}
 						direction={"prev"}
 						handleCondition={props.handleCondition}/>

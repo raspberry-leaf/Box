@@ -45,7 +45,8 @@ background: "#25D366",
 
 	link: {
 		textAlign: "center",
-		maxWidth: "425px"
+		maxWidth: "425px",
+		textDecoration: "none"
 	}
 })
 const ButtonDone = (props) => {
