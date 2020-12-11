@@ -41,33 +41,52 @@ const useStyles = makeStyles({
 background: "#25D366",
 		padding: '10px 15px',
 		boxShadow: "0px 3px 10px rgba(0,0,0,.25)",
+	},
+
+	link: {
+		textAlign: "center",
+		maxWidth: "425px"
 	}
 })
 const ButtonDone = (props) => {
 	const classes = useStyles();
 
 	return (
-		<button type="button"
-				className={props.disable === 0
-					? `${classes.done} ${classes.disable}`
-					: props.direction === "prev"
-						? `${classes.done} ${classes.prev}`
-						: props.condition !== "result"
-							? classes.done
-							: props.descr === "insta"
-								? `${classes.done} ${classes.instagram}`
-								: `${classes.done} ${classes.whats}`
-				}
-				onClick={() => props.condition === "result" && props.direction !== "prev" ? props.handleResult() : props.handleCondition(props.direction !== "next" ? "reset" : '')}>
-			{props.condition === "result" && props.direction !== "prev"
-				? props.descr === 'insta'
-					? "Скопировать код и вернуться в Instagram"
-					: "Скопировать код и отправить в WhatsApp"
-				: props.direction === "next"
-					? "Далее"
-					: "Собрать заново"
+		<React.Fragment>
+			{props.condition !== "result" || props.condition === "result" && props.direction === "prev"
+				? <button type="button"
+						  className={props.disable === 0
+							  ? `${classes.done} ${classes.disable}`
+							  : props.direction === "prev"
+								  ? `${classes.done} ${classes.prev}`
+								  : classes.done
+						  }
+						  onClick={() => props.condition === "result" && props.direction !== "prev" ? props.handleResult() : props.handleCondition(props.direction !== "next" ? "reset" : '')}>
+					{props.direction === "next"
+							? "Далее"
+							: "Собрать заново"
+					}
+				</button>
+
+				: <a className={props.disable === 0
+							  ? `${classes.link} ${classes.done} ${classes.disable}`
+							  : props.descr === "insta"
+									  ? `${classes.link} ${classes.done} ${classes.instagram}`
+									  : `${classes.link} ${classes.done} ${classes.whats}`
+						  }
+					 href={props.descr === 'insta'
+						 ? "https://api.instagram.com/raspberry__leaf/"
+						 : `https://wa.me/+79217484877?text=Привет!%20Хочу%20заказать%20RaspberryBox%3A%20${props.code}`
+					 }
+						  onClick={() => props.handleLink()}>
+					{props.descr === 'insta'
+						? "Скопировать код и вернуться в Instagram"
+						: "Скопировать код и отправить в WhatsApp"
+					}
+				</a>
 			}
-		</button>
+		</React.Fragment>
+
 	)
 }
 

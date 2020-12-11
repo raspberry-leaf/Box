@@ -47,7 +47,8 @@ const MainBlock = (props) => {
 						  code={props.code}
 						  condition={props.condition}
 						  handleResult={props.handleResult}
-						  handleCondition={props.handleCondition}/>
+						  handleCondition={props.handleCondition}
+						  handleLink={props.handleLink}/>
 				: <Item data={props.data}
 					  value={props.value}
 					  condition={props.condition}

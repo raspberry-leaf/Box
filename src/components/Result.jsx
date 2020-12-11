@@ -38,10 +38,16 @@ const Result = (props) => {
 			<p className={classes.code}>{props.code}</p>
 			<ButtonDone condition={props.condition}
 						descr={"insta"}
-						handleResult={props.handleResult}/>
+						direction={"none"}
+						handleLink={props.handleLink}
+						code={props.code}
+			/>
 			<ButtonDone condition={props.condition}
 						descr={"whats"}
-						handleResult={props.handleResult}/>
+						direction={"none"}
+						handleLink={props.handleLink}
+						code={props.code}
+			/>
 			<div className={classes.contain}>
 				Состав «Raspberry Box»:
 			</div>

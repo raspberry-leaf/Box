@@ -168,6 +168,10 @@ const Main = (props) => {
 		return false
 	}
 
+	const handleLink = () => {
+
+	}
+
 	const theme = createMuiTheme({
 		typography: {
 			fontFamily:  'Montserrat',
@@ -229,7 +233,8 @@ const Main = (props) => {
 								 condition={condition}
 								 handleCondition={handleCondition}
 								 handleChange={handleChange}
-								 handleResult={handleResult}/>
+								 handleResult={handleResult}
+								 handleLink={handleLink}/>
 				}
 
 			</Container>
