@@ -52,6 +52,8 @@ background: "#25D366",
 const ButtonDone = (props) => {
 	const classes = useStyles();
 
+	const instaCode = `Привет! Хочу заказать RaspberryBox ${props.code}`;
+
 	return (
 		<React.Fragment>
 			{props.condition !== "result" || props.condition === "result" && props.direction === "prev"
@@ -79,7 +81,7 @@ const ButtonDone = (props) => {
 						 ? "https://api.instagram.com/raspberry__leaf/"
 						 : `https://wa.me/+79217484877?text=Привет!%20Хочу%20заказать%20RaspberryBox%3A%20${props.code}`
 					 }
-						  onClick={() => props.handleLink()}>
+						  onClick={() => {navigator.clipboard.writeText(instaCode)}}>
 					{props.descr === 'insta'
 						? "Скопировать код и вернуться в Instagram"
 						: "Скопировать код и отправить в WhatsApp"

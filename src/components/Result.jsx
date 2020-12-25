@@ -24,7 +24,26 @@ const useStyles = makeStyles({
 		marginBottom: "20px"
 	},
 	contain: {
-		margin: "20px 0"
+		margin: "40px 0 20px 0",
+		fontWeight: "700"
+	},
+
+	list: {
+		lineHeight: "135%",
+		paddingLeft: "15px",
+		marginBottom: "25px",
+
+		"& li": {
+			marginBottom: "15px"
+		}
+	},
+
+	descript: {
+		paddingLeft: "15px"
+	},
+
+	groupImg: {
+		maxWidth: "100%"
 	}
 
 })
@@ -52,11 +71,11 @@ const Result = (props) => {
 
 				if (dataInit[i].name === "base") {
 					if (current.type === "standard") {
-						item.desc = "- пелёнка 90*120 см,</br>- нагрудник (> 6 мес),</br>- грызунок из бука с шуршащими ушками,</br>* материал: муслин (100% хлопок)"
+						item.desc = "- пелёнка 90*120 см,</br>- нагрудник (> 6 мес),</br>- грызунок из бука с шуршащими ушками (или замена на вязаный),</br>* материал: муслин (100% хлопок)"
 					} else if (current.option === 1) {
-						item.desc = "- одеяло 90*120 см,<br>- нагрудник (> 6 мес),<br>- грызунок из бука с шуршащими ушками,</br>* материал: муслин (100% хлопок)"
+						item.desc = "- одеяло 90*120 см,<br>- нагрудник (> 6 мес),<br>- грызунок из бука с шуршащими ушками (или замена на вязаный),</br>* материал: муслин (100% хлопок)"
 					} else {
-						item.desc = "- пелёнка 90*120 см,<br>- шапочка (0-3 мес),<br>- нагрудник (> 6 мес),<br>- грызунок из бука с шуршащими ушками,</br>* материал: трикотаж (95% хлопок, 5% лайкра)"
+						item.desc = "- пелёнка 90*120 см,<br>- шапочка (0-3 мес),<br>- нагрудник (> 6 мес),<br>- грызунок из бука с шуршащими ушками (или замена на вязаный),</br>* материал: трикотаж (95% хлопок, 5% лайкра)"
 					}
 				}
 
@@ -68,11 +87,7 @@ const Result = (props) => {
 		})
 
 		newArr = newArr.filter(item => typeof item !== 'string')
-
-		console.log(newArr)
-
 		return newArr;
-
 	}
 
 	return (
@@ -91,15 +106,16 @@ const Result = (props) => {
 						handleLink={props.handleLink}
 						code={props.code}
 			/>
+			<p>*Код будет автоматически скопирован при нажатии на кнопку</p>
 			<div className={classes.contain}>
 				Состав «Raspberry Box»:
 			</div>
-			<ul>
+			<ol className={classes.list}>
 				{resultArr().map(item => {
 					return <li>
-						<p>{item.title}</p>
+						<p className={classes.title}>{item.title}</p>
 						{item.desc
-							? <p dangerouslySetInnerHTML={{__html: `${item.desc}`}}></p>
+							? <p className={classes.descrip} dangerouslySetInnerHTML={{__html: `${item.desc}`}}></p>
 							: ''
 						}
 						<img className={classes.groupImg} src={require(`../img/${item.condition}/${item.img}`).default}></img>
@@ -108,7 +124,7 @@ const Result = (props) => {
 					<li>Эко-сумка ручной работы</li>
 					<li>Бесплатная доставка по России</li>
 
-			</ul>
+			</ol>
 			<ButtonDone condition={props.condition}
 						direction={"prev"}
 						handleCondition={props.handleCondition}/>

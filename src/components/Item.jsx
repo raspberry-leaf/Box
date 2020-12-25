@@ -57,7 +57,13 @@ const useStyles = makeStyles({
 const Item = (props) => {
 	const classes = useStyles();
 
-	const currentItems = props.data.find(item => item.name === props.condition)
+	const currentItems = () => {
+		const data = props.data.find(item => item.name === props.condition)
+
+		data.items = data.items.filter(item => item.quantity > 0)
+
+		return data;
+	}
 	const resultItem = props.data.find(item => item.name === "result")
 
 	const handleChange = (event) => {
@@ -66,14 +72,14 @@ const Item = (props) => {
 
 	return (
 		<div>
-			<p className={classes.desc} dangerouslySetInnerHTML={{__html: currentItems.desc}}></p>
+			<p className={classes.desc} dangerouslySetInnerHTML={{__html: currentItems().desc}}></p>
 			<FormControl component="fieldset">
 				<RadioGroup aria-label={props.condition}
 							name={props.condition}
 							className={classes.group}
 							value={props.value}
 							onChange={handleChange}>
-					{currentItems.items.map((item, i) => {
+					{currentItems().items.map((item, i) => {
 						return <FormControlLabel key={i}
 												 value={item.code}
 												 control={<Radio />}

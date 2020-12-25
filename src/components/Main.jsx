@@ -65,13 +65,19 @@ const Main = (props) => {
 	const [code, setCode] = useState('');
 	const [value, setValue] = useState('');
 
+	const stagesAmount = () => {
+		const data = [...state]
+
+		const finalData = data.filter(item => item.quantity > 0)
+
+		return finalData.length;
+	}
+
 	const handleProgress = () => {
-		setProgress(progress + 100/5)
+		setProgress(progress + 100/stagesAmount())
 	}
 
 	const handleCondition = (reset) => {
-
-
 
 		if (reset === "reset") {
 			setTotalRate(0);
@@ -93,7 +99,12 @@ const Main = (props) => {
 				break
 			case 'toy':
 				if (reset !== "reset") {
-					setCondition('accessory')
+					if (state[2].quantity < 1) {
+						setCondition('extra')
+					} else {
+						setCondition('accessory')
+					}
+
 				} else {
 					setCondition('base')
 				}
@@ -101,7 +112,11 @@ const Main = (props) => {
 				break
 			case 'accessory':
 				if (reset !== "reset") {
-					setCondition('extra')
+					if (state[3].quantity < 1) {
+						setCondition('postcard')
+					} else {
+						setCondition('extra')
+					}
 				} else {
 					setCondition('base')
 				}
@@ -168,9 +183,7 @@ const Main = (props) => {
 		return false
 	}
 
-	const handleLink = () => {
-
-	}
+	const handleLink = () => {}
 
 	const theme = createMuiTheme({
 		typography: {
@@ -225,7 +238,7 @@ const Main = (props) => {
 			</Sticky>
 			<Container maxWidth="sm">
 
-				{condition === "base" && state[0].quantity < 1
+				{condition === "base" && state[0].quantity < 1 || state[1].quantity < 1 || state[4].quantity < 1
 					? <span className={classes.extra} dangerouslySetInnerHTML={ {__html: "Все Raspberry Boxes забронированы. <br>Мы уже собираем новые, и в ближайшее время они здесь появятся."}}></span>
 					: <MainBlock data={state}
 								 value={value}
