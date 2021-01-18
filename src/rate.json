@@ -10,24 +10,24 @@
       "rate": [
         {
           "type": "standard",
-          "rate": 2385
+          "rate": 1850
         },
         {
           "type": "deluxe",
-          "rate": 3550
+          "rate": 2950
         }
       ]
     },
     {
       "name": "toy",
-      "rate": 2160
+      "rate": 2150
     },
     {
       "name": "accessory",
       "rate": [
         {
           "type": "yes",
-          "rate": 340
+          "rate": 445
         },
         {
           "type": "no",
@@ -40,7 +40,7 @@
       "rate": [
         {
           "type": "yes",
-          "rate": 755
+          "rate": 740
         },
         {
           "type": "no",
@@ -50,7 +50,7 @@
     },
     {
       "name": "postcard",
-      "rate": 155
+      "rate": 150
     }
   ]
 }
