@@ -111,8 +111,8 @@ const Result = (props) => {
 				Состав «Raspberry Box»:
 			</div>
 			<ol className={classes.list}>
-				{resultArr().map(item => {
-					return <li>
+				{resultArr().map((item, i) => {
+					return <li key={i}>
 						<p className={classes.title}>{item.title}</p>
 						{item.desc
 							? <p className={classes.descrip} dangerouslySetInnerHTML={{__html: `${item.desc}`}}></p>

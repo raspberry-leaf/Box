@@ -6,29 +6,103 @@
       "items": [
         {
           "quantity": 1,
-          "name": "mint",
+          "name": "grass",
           "type": "standard",
-          "title": "Мятный комплект",
-          "img": "img_mint-n.jpg",
-          "code": "STDMint"
+          "title": "Комплект веточки",
+          "img": "img_grass.jpg",
+          "code": "STDGrass"
         },
         {
           "quantity": 1,
-          "name": "beige",
+          "name": "grassYellow",
+          "type": "standard",
+          "title": "Комплект веточки с лимоном",
+          "img": "img_grassYellow.jpg",
+          "code": "STDGrassYellow"
+        },
+        {
+          "quantity": 1,
+          "name": "yellowGrass",
+          "type": "standard",
+          "title": "Лимонный комплект с веточками",
+          "img": "img_yellowGrass.jpg",
+          "code": "STDYellowGrass"
+        },
+        {
+          "quantity": 1,
+          "name": "yellow",
+          "type": "standard",
+          "title": "Лимонный комплект",
+          "img": "img_yellow.jpg",
+          "code": "STDYellow"
+        },
+        {
+          "quantity": 1,
+          "name": "eucalyptus",
+          "type": "standard",
+          "title": "Эвкалиптовый комплект",
+          "img": "img_eucalyptus.jpg",
+          "code": "STDEucalyptus"
+        },
+        {
+          "quantity": 1,
+          "name": "eucalyptusPink",
+          "type": "standard",
+          "title": "Эвкалиптово-розовый комплект",
+          "img": "img_eucalyptusPink.jpg",
+          "code": "STDEucalyptusPink"
+        },
+        {
+          "quantity": 1,
+          "name": "pinkEucalyptus",
+          "type": "standard",
+          "title": "Розово-эвкалиптовый комплект",
+          "img": "img_pinkEucalyptus.jpg",
+          "code": "STDPinkEucalyptus"
+        },
+        {
+          "quantity": 1,
+          "name": "rose",
+          "type": "standard",
+          "title": "Комплект пыльная роза",
+          "img": "img_rose.jpg",
+          "code": "STDRose"
+        },
+        {
+          "quantity": 1,
+          "name": "beigeHouse",
           "type": "deluxe",
           "option": 1,
-          "title": "Бежевый комплект",
-          "img": "img_mint-n.jpg",
-          "code": "DLXBeige"
+          "title": "Бежевый комплект с одеялом",
+          "img": "img_beigeHouse.jpg",
+          "code": "DLXBeigeHouse"
         },
         {
           "quantity": 1,
-          "name": "roses",
+          "name": "greyPen",
+          "type": "deluxe",
+          "option": 1,
+          "title": "Дымчатый комплект с одеялом",
+          "img": "img_greyPen.jpg",
+          "code": "DLXGreyPen"
+        },
+        {
+          "quantity": 1,
+          "name": "flowersBirds",
           "type": "deluxe",
           "option": 2,
-          "title": "Цветочный комплект",
-          "img": "img_mint-n.jpg",
-          "code": "DLXRoses"
+          "title": "Комплект цветы и птички",
+          "img": "img_flowersBirds.jpg",
+          "code": "DLXFlowersBirds"
+        },
+        {
+          "quantity": 1,
+          "name": "cottonFlowers",
+          "type": "deluxe",
+          "option": 2,
+          "title": "Комплект цветки хлопка",
+          "img": "img_cottonFlowers.jpg",
+          "code": "DLXCottonFlowers"
         }
       ],
       "finalCode": "",
@@ -41,17 +115,101 @@
       "items": [
         {
           "quantity": 1,
-          "name": "girlMint",
-          "title": "Зайчик в платье",
-          "img": "img_mint-n.jpg",
-          "code": "BGMint"
+          "name": "girlBlueFlowers",
+          "title": "Зайчик в платье с голубыми цветочками",
+          "img": "img_girlBlueFlowers.jpg",
+          "code": "BGBlueFlowers"
         },
         {
           "quantity": 1,
-          "name": "boyGreen",
-          "title": "Зайчик в шортах",
-          "img": "img_mint-n.jpg",
-          "code": "BBGreen"
+          "name": "boyWhitePen",
+          "title": "Зайчик в белых штанишках",
+          "img": "img_boyWhitePen.jpg",
+          "code": "BBWhitePen"
+        },
+        {
+          "quantity": 1,
+          "name": "girlPinkFlowersOrange",
+          "title": "Зайчик в платье с алыми цветочками",
+          "img": "img_girlPinkFlowersOrange.jpg",
+          "code": "BGPinkFlowersOrange"
+        },
+        {
+          "quantity": 1,
+          "name": "boyBlueFlowers",
+          "title": "Зайчик в голубых штанишках с цветочками",
+          "img": "img_boyBlueFlowers.jpg",
+          "code": "BBBlueFlowers"
+        },
+        {
+          "quantity": 1,
+          "name": "girlManyFlowers",
+          "title": "Зайчик в юбке с пёстрыми цветочками",
+          "img": "img_girlManyFlowers.jpg",
+          "code": "BGManyFlowers"
+        },
+        {
+          "quantity": 1,
+          "name": "boyBlueStrips",
+          "title": "Зайчик в полосатых штанишках",
+          "img": "img_boyBlueStrips.jpg",
+          "code": "BBBlueStrips"
+        },
+        {
+          "quantity": 1,
+          "name": "girlGrey",
+          "title": "Зайчик в дымчатом платье",
+          "img": "img_girlGrey.jpg",
+          "code": "BGGrey"
+        },
+        {
+          "quantity": 1,
+          "name": "girlBlueFlowersPink",
+          "title": "Зайчик в голубом платье с алыми цветочками",
+          "img": "img_girlBlueFlowersPink.jpg",
+          "code": "BGBlueFlowersPink"
+        },
+        {
+          "quantity": 1,
+          "name": "boyGrass",
+          "title": "Зайчик в болотных штанишках",
+          "img": "img_boyGrass.jpg",
+          "code": "BBGrass"
+        },
+        {
+          "quantity": 1,
+          "name": "girlWhitePen",
+          "title": "Зайчик в белом платье с пёрышками",
+          "img": "img_girlWhitePen.jpg",
+          "code": "BGWhitePen"
+        },
+        {
+          "quantity": 1,
+          "name": "girlDoodle",
+          "title": "Зайчик в юбке с цветочками и завиточками",
+          "img": "img_girlDoodle.jpg",
+          "code": "BGDoodle"
+        },
+        {
+          "quantity": 1,
+          "name": "boyGrey",
+          "title": "Зайчик в дымчатых штанишках",
+          "img": "img_boyGrey.jpg",
+          "code": "BBGrey"
+        },
+        {
+          "quantity": 1,
+          "name": "girlWhiteBerries",
+          "title": "Зайчик в белом платье с ягодками",
+          "img": "img_girlWhiteBerries.jpg",
+          "code": "BGWhiteBerries"
+        },
+        {
+          "quantity": 1,
+          "name": "boyBlackWhite",
+          "title": "Зайчик в штанишках с чёрными цветочками",
+          "img": "img_boyBlackWhite.jpg",
+          "code": "BBBlackWhite"
         }
       ],
       "finalCode": "",
@@ -145,36 +303,36 @@
         {
           "quantity": 1,
           "name": "one",
-          "title": "Открытка 'Пожелание'",
-          "img": "img_mint-n.jpg",
+          "title": "Открытка 'Привет, малыш!'",
+          "img": "img_1.jpg",
           "code": "POne"
         },
         {
           "quantity": 1,
           "name": "two",
-          "title": "Открытка 'Пожелание'",
-          "img": "img_mint-n.jpg",
+          "title": "Открытка 'Рахат-лукум наших сердец'",
+          "img": "img_2.jpg",
           "code": "PTwo"
         },
         {
           "quantity": 1,
           "name": "three",
-          "title": "Открытка 'Пожелание'",
-          "img": "img_mint-n.jpg",
+          "title": "Открытка 'Ура! Мама и папа!'",
+          "img": "img_3.jpg",
           "code": "PThree"
         },
         {
           "quantity": 1,
           "name": "four",
-          "title": "Открытка 'Пожелание'",
-          "img": "img_mint-n.jpg",
+          "title": "Открытка 'Счастья будет больше'",
+          "img": "img_4.jpg",
           "code": "PFour"
         },
         {
           "quantity": 1,
           "name": "five",
-          "title": "Открытка 'Пожелание'",
-          "img": "img_mint-n.jpg",
+          "title": "Открытка 'Солнышко светит ярче!'",
+          "img": "img_5.jpg",
           "code": "PFive"
         }
       ],
