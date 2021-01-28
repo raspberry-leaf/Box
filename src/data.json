@@ -225,7 +225,7 @@
           "name": "leaves",
           "type": "yes",
           "title": "Грызунок с листочками",
-          "img": "img_mint-n.jpg",
+          "img": "img_leaves.jpg",
           "code": "ACSLeaves"
         },
         {
@@ -233,7 +233,7 @@
           "name": "hearts",
           "type": "yes",
           "title": "Грызунок с сердечками",
-          "img": "img_mint-n.jpg",
+          "img": "img_hearts.jpg",
           "code": "ACSHearts"
         },
         {
@@ -241,7 +241,7 @@
           "name": "flower",
           "type": "yes",
           "title": "Грызунок с цветочком, сердечком и листиком",
-          "img": "img_mint-n.jpg",
+          "img": "img_flower.jpg",
           "code": "ACSFlower"
         },
         {
@@ -265,7 +265,7 @@
           "name": "mint",
           "type": "yes",
           "title": "Мятное мороженое",
-          "img": "img_mint-n.jpg",
+          "img": "img_mint.jpg",
           "code": "ICEMint"
         },
         {
@@ -273,7 +273,7 @@
           "name": "strawberry",
           "type": "yes",
           "title": "Клубничное мороженое",
-          "img": "img_mint-n.jpg",
+          "img": "img_strawberry.jpg",
           "code": "ICEStrawberry"
         },
         {
@@ -281,7 +281,7 @@
           "name": "lemon",
           "type": "yes",
           "title": "Лимонное мороженое",
-          "img": "img_mint-n.jpg",
+          "img": "img_lemon.jpg",
           "code": "ICELemon"
         },
         {
