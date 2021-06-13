@@ -54,6 +54,30 @@ const ButtonDone = (props) => {
 
 	const instaCode = `Привет! Хочу заказать RaspberryBox ${props.code}`;
 
+	const copyToClipboard = (textToCopy) => {
+		// navigator clipboard api needs a secure context (https)
+		if (navigator.clipboard && window.isSecureContext) {
+			// navigator clipboard api method'
+			return navigator.clipboard.writeText(textToCopy);
+		} else {
+			// text area method
+			let textArea = document.createElement("textarea");
+			textArea.value = textToCopy;
+			// make the textarea out of viewport
+			textArea.style.position = "fixed";
+			textArea.style.left = "-999999px";
+			textArea.style.top = "-999999px";
+			document.body.appendChild(textArea);
+			textArea.focus();
+			textArea.select();
+			return new Promise((res, rej) => {
+				// here the magic happens
+				document.execCommand('copy') ? res() : rej();
+				textArea.remove();
+			});
+		}
+	}
+
 	return (
 		<React.Fragment>
 			{props.condition !== "result" || props.condition === "result" && props.direction === "prev"
@@ -81,7 +105,7 @@ const ButtonDone = (props) => {
 						 ? "https://api.instagram.com/raspberry__leaf/"
 						 : `https://wa.me/+79217484877?text=Привет!%20Хочу%20заказать%20RaspberryBox%3A%20${props.code}`
 					 }
-						  onClick={() => {navigator.clipboard.writeText(instaCode)}}>
+						  onClick={() => copyToClipboard(instaCode)}>
 					{props.descr === 'insta'
 						? "Скопировать код и вернуться в Instagram"
 						: "Скопировать код и отправить в WhatsApp"
