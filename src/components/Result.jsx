@@ -106,7 +106,6 @@ const Result = (props) => {
 						handleLink={props.handleLink}
 						code={props.code}
 			/>
-			<p>*Код будет автоматически скопирован при нажатии на кнопку</p>
 			<div className={classes.contain}>
 				Состав «Raspberry Box»:
 			</div>

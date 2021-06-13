@@ -32,7 +32,7 @@ const useStyles = makeStyles({
 
 	instagram: {
 		//background: "#d6249f",
-		background: "radial-gradient(circle at 30% 107%, #ffe800 0%, #f9e300 0%, #fd5949 45%,#d6249f 60%,#285AEB 90%);",
+		background: "radial-gradient(circle at 30% 107%, #ffe800 0%, #f9b800 0%, #fd5949 45%,#d6249f 60%,#285AEB 90%);",
 		boxShadow: "0px 3px 10px rgba(0,0,0,.25)",
 		marginBottom: "20px",
 		padding: '10px 15px',
@@ -46,7 +46,16 @@ background: "#25D366",
 	link: {
 		textAlign: "center",
 		maxWidth: "425px",
-		textDecoration: "none"
+		textDecoration: "none",
+		margin: "0 auto",
+		lineHeight: "130%"
+	},
+
+	comment: {
+		textAlign: "left",
+		maxWidth: "425px",
+		margin: "10px auto 20px auto",
+		lineHeight: "130%"
 	}
 })
 const ButtonDone = (props) => {
@@ -71,22 +80,31 @@ const ButtonDone = (props) => {
 					}
 				</button>
 
-				: <a className={props.disable === 0
-							  ? `${classes.link} ${classes.done} ${classes.disable}`
-							  : props.descr === "insta"
-									  ? `${classes.link} ${classes.done} ${classes.instagram}`
-									  : `${classes.link} ${classes.done} ${classes.whats}`
-						  }
-					 href={props.descr === 'insta'
-						 ? "https://www.instagram.com/raspberry__leaf/"
-						 : `https://wa.me/+79217484877?text=Привет!%20Хочу%20заказать%20RaspberryBox%3A%20${props.code}`
-					 }
-						  onClick={() => {navigator.clipboard.writeText(instaCode)}}>
-					{props.descr === 'insta'
-						? "Скопировать код и вернуться в Instagram"
-						: "Скопировать код и отправить в WhatsApp"
+				: <div>
+					<a className={props.disable === 0
+						? `${classes.link} ${classes.done} ${classes.disable}`
+						: props.descr === "insta"
+							? `${classes.link} ${classes.done} ${classes.instagram}`
+							: `${classes.link} ${classes.done} ${classes.whats}`
 					}
-				</a>
+					   href={props.descr === 'insta'
+						   ? "https://www.instagram.com/raspberry__leaf/"
+						   : `https://wa.me/+79217484877?text=Привет!%20Хочу%20заказать%20RaspberryBox%3A%20${props.code}`
+					   }
+					   onClick={() => {navigator.clipboard.writeText(instaCode)}}>
+						{props.descr === 'insta'
+							? "Вернуться в Instagram"
+							: "Скопировать код и отправить в WhatsApp"
+						}
+					</a>
+					<p className={classes.comment}>
+						{props.descr === 'insta'
+							? "*Скопируйте код «в ручную» или сделайте скриншот"
+							: "*Код будет автоматически скопирован при нажатии на кнопку"
+						}
+					</p>
+				</div>
+
 			}
 		</React.Fragment>
 
