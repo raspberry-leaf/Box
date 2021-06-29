@@ -3,6 +3,7 @@ import {makeStyles} from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Item from "./Item";
 import Result from "./Result";
+import Intro from "./Intro";
 
 const useStyles = makeStyles({
 
@@ -29,17 +30,19 @@ const MainBlock = (props) => {
 	return (
 		<div>
 			<Typography component="h2" className={classes.subtitle}>
-				{props.condition === "base"
-					? <span>Выберите базовый комплект:</span>
-					: props.condition === "toy"
-						? <span>Выберите игрушку:</span>
-						: props.condition === "accessory"
-							? <span>Заменить грызунок-ушки на грызунок ручной вязки?</span>
-							: props.condition === "extra"
-								? <span>Добавить мороженое?</span>
-								:  props.condition === "postcard"
-									? <span>Выберите открытку:</span>
-									: ''
+				{props.condition === "intro"
+					? <span>Что такое Raspberry Box?</span>
+					:props.condition === "base"
+						? <span>Выберите базовый комплект:</span>
+						: props.condition === "toy"
+							? <span>Выберите игрушку:</span>
+							: props.condition === "accessory"
+								? <span>Заменить грызунок-ушки на грызунок ручной вязки?</span>
+								: props.condition === "extra"
+									? <span>Добавить мороженое?</span>
+									:  props.condition === "postcard"
+										? <span>Выберите открытку:</span>
+										: ''
 				}
 			</Typography>
 			{props.condition === "result"
@@ -49,11 +52,17 @@ const MainBlock = (props) => {
 						  handleResult={props.handleResult}
 						  handleCondition={props.handleCondition}
 						  handleLink={props.handleLink}/>
-				: <Item data={props.data}
-					  value={props.value}
-					  condition={props.condition}
-					  handleChange={props.handleChange}
-					  handleCondition={props.handleCondition}/>
+				: props.condition === "intro"
+					? <Intro data={props.data}
+							 value={props.value}
+							 condition={props.condition}
+							 handleChange={props.handleChange}
+							 handleCondition={props.handleCondition}/>
+					: <Item data={props.data}
+						  value={props.value}
+						  condition={props.condition}
+						  handleChange={props.handleChange}
+						  handleCondition={props.handleCondition}/>
 			}
 		</div>
 

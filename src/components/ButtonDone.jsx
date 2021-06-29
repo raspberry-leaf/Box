@@ -76,7 +76,9 @@ const ButtonDone = (props) => {
 						  onClick={() => props.condition === "result" && props.direction !== "prev" ? props.handleResult() : props.handleCondition(props.direction !== "next" ? "reset" : '')}>
 					{props.direction === "next"
 							? "Далее"
-							: "Собрать заново"
+							: props.direction === "start"
+								? "Начать собирать"
+								: "Собрать заново"
 					}
 				</button>
 

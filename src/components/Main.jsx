@@ -58,7 +58,7 @@ const Main = (props) => {
 	const initialRate = props.rate;
 
 	const [state,setState] = useState(initialData);
-	const [condition,setCondition] = useState("base");
+	const [condition,setCondition] = useState("intro");
 	const [rate,setRate] = useState(0);
 	const [totalRate,setTotalRate] = useState(0);
 	const [progress, setProgress] = useState(0);
@@ -94,6 +94,9 @@ const Main = (props) => {
 		setValue('');
 
 		switch(condition) {
+			case 'intro':
+				setCondition('base')
+				break
 			case 'base':
 				setCondition('toy')
 				break
@@ -106,7 +109,7 @@ const Main = (props) => {
 					}
 
 				} else {
-					setCondition('base')
+					setCondition('intro')
 				}
 
 				break
@@ -118,25 +121,25 @@ const Main = (props) => {
 						setCondition('extra')
 					}
 				} else {
-					setCondition('base')
+					setCondition('intro')
 				}
 				break
 			case 'extra':
 				if (reset !== "reset") {
 					setCondition('postcard')
 				} else {
-					setCondition('base')
+					setCondition('intro')
 				}
 				break
 			case 'postcard':
 				if (reset !== "reset") {
 					setCondition('result')
 				} else {
-					setCondition('base')
+					setCondition('intro')
 				}
 				break
 			default:
-				setCondition('base')
+				setCondition('intro')
 		}
 
 	}

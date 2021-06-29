@@ -32,7 +32,7 @@ const Buttons = (props) => {
 	
 	return (
 		<div className={classes.buttons}>
-			{props.condition !== "base"
+			{props.condition !== "base" && props.condition !== "intro"
 				? <ButtonDone condition={props.condition}
 							  handleCondition={props.handleCondition}
 							  direction={"prev"}/>
@@ -44,7 +44,7 @@ const Buttons = (props) => {
 				? <ButtonDone condition={props.condition}
 							  handleCondition={props.handleCondition}
 							  disable={props.disable}
-							  direction={"next"}/>
+							  direction={props.condition === "intro" ? "start" : "next"}/>
 				: ''
 			}
 		</div>
