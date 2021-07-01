@@ -56,7 +56,12 @@ background: "#25D366",
 		maxWidth: "425px",
 		margin: "10px auto 20px auto",
 		lineHeight: "130%"
-	}
+	},
+
+	desc: {
+		margin: "0 0 30px 0",
+		lineHeight: "130%",
+	},
 })
 const ButtonDone = (props) => {
 	const classes = useStyles();
