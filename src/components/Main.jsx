@@ -11,7 +11,7 @@ import GoogleFontLoader from 'react-google-font-loader';
 const useStyles = makeStyles({
 	box: {
 		marginBottom: "45px",
-		fontSize: "14px"
+		fontSize: "16px"
 	},
 
 	title: {
@@ -205,7 +205,7 @@ const Main = (props) => {
 					body: {
 						backgroundColor: 'transparent',
 						color: '#47525E',
-						fontSize: 14,
+						fontSize: 16,
 						lineHeight: '1',
 					},
 				},

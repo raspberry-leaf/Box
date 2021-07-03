@@ -1,11 +1,12 @@
 import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import ButtonDone from "./ButtonDone";
+import LazyLoad from "react-lazyload";
 
 const useStyles = makeStyles({
 	desc: {
 		fontWeight: "400",
-		fontSize: "16px",
+		fontSize: "18px",
 		marginBottom: "20px",
 		letterSpacing: "0.6px",
 		textAlign: "center",
@@ -20,7 +21,7 @@ const useStyles = makeStyles({
 		textAlign: "center",
 		padding: "20px 15px",
 		lineHeight: "140%",
-		fontSize: "16px",
+		fontSize: "18px",
 		marginBottom: "20px"
 	},
 	contain: {
@@ -117,7 +118,9 @@ const Result = (props) => {
 							? <p className={classes.descrip} dangerouslySetInnerHTML={{__html: `${item.desc}`}}></p>
 							: ''
 						}
-						<img className={classes.groupImg} src={require(`../img/${item.condition}/${item.img}`).default}></img>
+						<LazyLoad>
+							<img className={classes.groupImg} src={require(`../img/${item.condition}/${item.img}`).default}></img>
+						</LazyLoad>
 					</li>
 				})}
 					<li>Эко-сумка ручной работы</li>

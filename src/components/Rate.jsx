@@ -5,7 +5,7 @@ const useStyles = makeStyles({
 	rate: {
 		textAlign: "center",
 		marginTop: "10px",
-		fontSize: "16px"
+		fontSize: "18px"
 	}
 
 })

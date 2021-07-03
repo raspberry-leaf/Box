@@ -5,6 +5,7 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Buttons from "./Buttons";
+import LazyLoad from "react-lazyload";
 
 const useStyles = makeStyles({
 	desc: {
@@ -43,12 +44,12 @@ const useStyles = makeStyles({
 		marginTop: "10px",
 		marginBottom: "0",
 		fontWeight: "700",
-		fontSize: "14px"
+		fontSize: "16px"
 	},
 
 	groupDesc: {
 		margin: "10px 0 15px 0",
-		fontSize: "14px"
+		fontSize: "16px"
 	},
 
 
@@ -99,8 +100,8 @@ const Item = (props) => {
 									}
 								</p>
 								{item.img
-									? <img className={classes.groupImg}
-										   src={require(`../img/${props.condition}/${item.img}`).default}/>
+									? <LazyLoad><img className={classes.groupImg}
+													 src={require(`../img/${props.condition}/${item.img}`).default}/></LazyLoad>
 									: ''
 								}
 							</div>}/>

@@ -9,7 +9,7 @@ const useStyles = makeStyles({
 
 	subtitle: {
 		fontWeight: "400",
-		fontSize: "16px",
+		fontSize: "18px",
 		margin: "15px 0",
 		letterSpacing: "0.6px",
 		textAlign: "center",

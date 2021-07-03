@@ -5,6 +5,7 @@ import Typography from "@material-ui/core/Typography";
 import Progress from "./Progress";
 import Rate from "./Rate";
 import {Container} from "@material-ui/core";
+import LazyLoad from "react-lazyload";
 
 
 const useStyles = makeStyles({
@@ -21,7 +22,7 @@ const useStyles = makeStyles({
 
 	subtitle: {
 		fontWeight: "700",
-		fontSize: "16px",
+		fontSize: "18px",
 		margin: "10px auto",
 		letterSpacing: "0.8px",
 		textAlign: "center",
@@ -41,9 +42,11 @@ const Head = (props) => {
 
 	return (
 		<Container maxWidth="sm" className={classes.top}>
-			<a href={"https://api.instagram.com/raspberry__leaf/"} className={classes.head}>
+			<LazyLoad>
+			<a href={"https://api.instagram.com/raspberry__leaf/"} target="_blank" className={classes.head}>
 				<img className={classes.img} src={main}/>
 			</a>
+			</LazyLoad>
 			<Typography component="h2" className={classes.subtitle}>
 				{props.condition === "result"
 					? "Поздравляем! «Raspberry Box» собран"
