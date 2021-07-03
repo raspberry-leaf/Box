@@ -145,7 +145,7 @@ const Intro = (props) => {
 				<LazyLoad height={200} offset={100}>
 				<Swiper
 					spaceBetween={0}
-					slidesPerView={2}
+					slidesPerView={1}
 					navigation
 					pagination={{ clickable: true }}
 					scrollbar={{ draggable: true }}
