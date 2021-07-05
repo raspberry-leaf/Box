@@ -104,6 +104,9 @@ const Item = (props) => {
 													 src={require(`../img/${props.condition}/${item.img}`).default}/></LazyLoad>
 									: ''
 								}
+								{props.value === item.code && i !== currentItems().items.length - 1 && <Buttons
+										 condition={props.condition}
+										 handleCondition={props.handleCondition}/>}
 							</div>}/>
 
 					})

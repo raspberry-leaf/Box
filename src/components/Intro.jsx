@@ -126,8 +126,13 @@ const Intro = (props) => {
 					<SwiperSlide><img className={classes.groupImg} src={require(`../img/intro/8.jpg`).default}></img></SwiperSlide>
 				</Swiper>
 				</LazyLoad>
-				<p>Созданием RaspberryBox занимается небольшая команда мастеров. Заглядывайте знакомиться к нам в <a className={classes.link} target="_blank" href={"https://api.instagram.com/raspberry__leaf/"}>Instagram</a></p>
-
+				<p>Созданием RaspberryBox занимается небольшая команда мастеров. Заглядывайте знакомиться к нам в Instagram</p>
+				<Buttons condition={props.condition}
+						 handleCondition={props.handleCondition}/>
+				<a className={`${classes.linkBtn} ${classes.instagram}`}
+				   target="_blank"
+				   href={"https://www.instagram.com/raspberry__leaf/"}
+				>Подписаться в Instagram</a>
 				<p>Каждый набор RaspberryBox включает в себя:</p>
 				⭐ базовый комплект
 				<br/>⭐ игрушечного зайчонка
