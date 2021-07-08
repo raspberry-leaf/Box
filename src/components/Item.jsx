@@ -115,7 +115,7 @@ const Item = (props) => {
 
 				</RadioGroup>
 			</FormControl>
-			{props.condition === "base" && <p>*Для продолжения выберите позицию</p>}
+			{props.condition !== "intro" && props.condition !== "result" && <p>*Для продолжения выберите позицию</p>}
 			<Buttons disable={props.value !== '' ? 1 : 0}
 					 condition={props.condition}
 					 handleCondition={props.handleCondition}/>
